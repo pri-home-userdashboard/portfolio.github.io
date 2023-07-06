@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Limit </title>
+    <style>
+      
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+        }
+        .container{
+            /* border: 1px solid red; */
+            width: 350px;
+            height: auto;
+            background-color: #ffff;
+            box-shadow: 2px 5px 18px #00000050;
+            border-radius: 9px;
+
+        }
+        textarea{
+            width: 100%;
+            height: calc(200px - 25px);
+            resize: none;
+            padding: 5px 8px;
+            border-radius: 9px;
+            border-radius: 1px solid gray;
+            outline: none;
+        }
+        .container p{
+            text-align: right;
+            margin-right: 15px;
+            font-weight: bold;
+            padding: 2px;
+            font-size: .8rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea name="text" id="myText"  maxlength="" placeholder="Type Something...."></textarea>
+        <p id="res">0</p>
+    </div>
+    <script>
+        const myText = document.getElementById('myText');
+        const  res = document.getElementById('res');
+        var wordlimit = 180;
+        myText.addEventListener('input',()=>{
+           let a =  myText.value.length;
+           res.innerHTML = `${a} / ${wordlimit}`;
+           
+            if(a > wordlimit - 10){
+                res.style.color = 'red'
+            }else{
+            res.style.color = '#000';
+          }
+          
+          if(a === wordlimit){
+            myText.setAttribute('maxlength',wordlimit)
+          }
+         
+        })
+    </script>
+</body>
+</html>
