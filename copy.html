@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy project</title>
+    <style>
+      textarea{
+        width: 500px;
+        height: 200px;
+        outline: none;
+        border: 1px solid gray;
+        padding: 10px 5px;
+        color: rgb(133, 133, 133);
+        resize: none;
+       
+      }
+      button{
+        padding: 5px 18px;
+        border: 1px solid transparent;
+        background: #000;
+        color: #fff;
+        outline: none;
+        border-radius: 5px ;
+        font-size: 1rem;
+        cursor: pointer;
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <textarea name="text" id="myText" placeholder="type something...."></textarea> <br>
+    <button id="btn">Copy</button>
+    <script>
+   let btn = document.querySelector('#btn');//  target btn
+   let myText = document.querySelector('#myText'); //  target myText;
+
+    myText.addEventListener('input',function(){//  target value for show copy button in range
+       let myText = document.querySelector('#myText').value;
+       myText = myText.trim()
+        if(myText.length >= 1){
+         btn.style.display = 'block';
+        }else{
+         btn.style.display = 'none';
+        }  
+    })
+
+   btn.addEventListener('click',function(){//  target copy btn for copy text in textArea
+    myText.select();
+    document.execCommand('copy');     
+   });
+
+
+    window.addEventListener('copy',function(){// this is for copy innerHTML = value is copied and change bg color
+    btn.innerHTML = 'copied text'
+    btn.style.backgroundColor = 'green'
+    // on = true;
+    //  if(on == true){
+       function normal(){
+        btn.style.backgroundColor = '#000';
+        btn.innerHTML = 'copy'
+       }''
+       setTimeout(normal,2000)
+    //  }
+    })
+
+    </script>
+</body>
+</html>
