@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ctof</title>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        font-family: 'Open Sans', sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        @media screen and (max-width:425px){
+            .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        #equal{
+          display: none;
+        }
+
+        .title{
+            top: 20%; 
+            font-size: 1.5rem !important;
+        }
+        .cbox{
+            margin: 10px 20px !important;
+            text-transform: capitalize;
+        }
+
+        }
+        .wrapper{
+            width: auto;
+            height: auto;
+            border: 1px solid gray ;
+            border-radius: 15px;
+            box-shadow: 5px 12px 25px #00000050;
+            padding: 50px;
+            display: flex;
+
+        }
+        .cbox{
+            margin: 0px 20px;
+        }
+        #equal{
+            font-size: 2.5rem;
+            margin-top: 8px;
+        }
+        .cbox input{
+            padding: 6px 6px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid gray;
+            color: rgb(83, 83, 83);
+        }
+        .title{
+            position: absolute;
+            margin-left:  10px;
+            top: 20%;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="title">celsius to Fahrenheit</h3>
+        <div class="wrapper">
+            
+            <div class="cbox">
+                <label for="celsius"> Degree Celsius</label> <br>
+                <input type="number" id="cel">
+            </div>
+              <div class="ebox"><h3 id="equal">=</h3></div>
+            <div class="cbox feraheit">
+                <label for="fahrenheit">Fahrenheit</label> <br>
+
+                <input type="number" id="fer">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+      
+      let cel = document.getElementById('cel');
+      let fer = document.getElementById('fer');
+      
+      cel.addEventListener("input", function(){
+       let c = this.value;
+       let f = ( c *9/5) + 32;
+       fer.value = f;  
+      })
+
+      fer.addEventListener("input", function(){
+       let f = this.value;
+       let c = ( f -32) *5/9;
+         if(!Number.isInteger(c)){
+            c =c.toFixed(2)
+         }
+       
+       cel.value = c;  
+      })
+    </script>
+</body>
+</html>
