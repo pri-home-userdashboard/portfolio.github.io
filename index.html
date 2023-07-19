@@ -3,180 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Know me</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ChatWithAi</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #fcffff;
+}
+header{
+    width: 100%;
+    height: 60px;
+    background: #ab55d3;
+    position: fixed;
+
+}
+.aiBox{
+    width: 180px;
+    height: 60px;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+}
+.aiImage{
+    width: 55px;
+    height: 55px;
+    border: 3px solid #b447fd; 
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0px 15px;
+}
+.aiImage img{
+    width: 100%;
+    border-radius: 50%;
+
+}
+.aiBox h3{
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.aiBox h3 .online{
+    font-size: .8rem;
+}
+/* ------------------------------------------------------------------------------------------- */
+
+.wrapper{
+    width: 100%;
+    height: calc(100vh - 60px);
+    /* border: 1px solid; */
+    position: relative;
+    top: 60px;
+
+
+}
+.chatBox{
+    width: 100%;
+    height: calc(100vh - 120px);
+    /* border: 1px solid; */
+    background: #f5f5f5;
+    overflow-y: scroll;
+}
+.box{
+    width: 260px;
+    height: auto;
+    background-color: rgb(27, 27, 27);
+    padding: 5px 10px ;
+    color: #fff;
+    border-radius: 10px 10px 10px 0px;
+    margin: 6px; 
+}
+.rightBox{
+    width: 100%;
+    height: auto;
+    /* border: 1px solid ; */
+    display: flex;
+    justify-content: end;
+
+
+}
+
+
+
+
+
+
+.userInput{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid; */
+    position: fixed;
+    background: #f5f5f5;
+
+}
+.input{
+    width: 80%;
+    height: auto;
+    /* border: 1px solid; */
+
+}
+.userInput #userText{
+    resize: none;
+    width: 100%;
+    padding: 5px 25px;
+    height: 50px;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 50px;
+    
+}
+.send img{
+    width: 35px;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    left: 12px;
+   
+}
+.left{
+    width: 100%;
+    height: auto;
+    /* border: 2px solid; */
+    display: flex;
+   justify-content: start;
+}
+.aireply{
+    width: 300px;
+    height: auto;
+    padding: 5px 15px ;
+    background-color: #ab55d3;
+    color: #ffffff;
+    margin: 8px 15px;
+    border-radius: 10px 10px 10px 0px;
+
+ 
+
+
+}
+@media screen and (max-width: 425px) {
+    .aireply{
+        width: 60%;
+    }
+    .box{
+        width: 60%;
+    }
+}
+    </style>
 </head>
 <body>
     
-    <div class="container" >
-        <div class="header">
-            
-            <div class="logo"> <i class=" fa fa-bars" id="threeBars"></i><h3>Portfolio</h3></div>
-              <a href="" id="contactme" class="ctnme">contact Us</a>
+    <div class="container">
+        <header>
+           <div class="aiBox">
+            <div class="aiImage"><img src="https://cdna.artstation.com/p/assets/images/images/053/575/430/large/villiam-s-speedart-villiamw-vogue-magazine-cover-shooting-beautiful-woman-with-swe-f2f6bba2-9828-4569-91d5-9a7c468f167e.jpg?1662537999" alt=""></div>
+            <h3>Alexa <br> <p class="online">online</p></h3>
+           </div>
+        </header>
 
-            <div class="menu">
-                <ul>
-                    <a href=""><li>Home</li></a>
-                    <a href=""><li>HTML </li></a>
-                    <a href=""><li>CSS</li></a>
-                    <a href=""><li>JavaScript</li></a>
-                    <a href=""><li>about us</li></a>
-                    <a href=""><li>project</li></a>
-                    <a href="https://wa.link/fj38rw" target="_blank"><li id="contactme">contact Us</li></a>
-                </ul>
+        <!-- ------------------------------------------------------------------------------ -->
+        <div class="wrapper">
+            <div class="chatBox" id="chats">
+
+            </div>
+
+
+            <div class="userInput">
+                <div class="input"><input type="text" id="userText" placeholder="Chat In English"></div>
+                <div class="send"><img src="https://pixlok.com/wp-content/uploads/2021/10/Send-Iconkkgg.png" id="sendBtn" alt=""></div>
             </div>
         </div>
-        <div class="control"></div>
 
-        <div class="content">
-            <div class="firstPage">
-                <div class="leftText">
-                    <div class="textBox">
-                        <h2>Hey! I am</h2>
-                        <div class="prince">
-                            <div class="nameBox">
-                                <h2>Prince Nishad</h2>
-                            </div>
-                        </div>
-                        
-                        <h3>UI & UX designer</h3>
-                        <p>From Uttar Pradesh ( Kushinagar ) <br>
-                        website & apps Designer using HTML CSS JavaScript 
-                        </p> 
-                        <br>
-                        <button class="hire">HIRE ME</button>
-                    </div>
-                </div>
-                <div class="rightText">
-                    <div class="box1 box"></div>
-                    <div class="box2 box">
-                        <img src="images/prince.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="projects">
-                <h2>Featured Projects</h2>
-                <p>100+ Awesome HTML CSS JavaScript Projects List</p>
-                <div class="pbox">
-                   <a href="https://gyankamao.github.io/todolist.github.io/"> <div class="pbox1 projectBox"><h3>To Do List </h3></div></a>
-                   <a href="wordlimit.html"> <div class="pbox1 projectBox"><h3>Word Limiter</h3></div></a>
-                   <a href="copy.html"> <div class="pbox1 projectBox"><h3>Text Copy</h3></div></a>
-                   <a href="unit.html"> <div class="pbox1 projectBox"><h3>Unit Convertor</h3></div></a>
-                    <a href="ctif.html"> <div class="pbox1 projectBox"><h3>Celsius To fahrenheit</h3></div></a>
-                     <a href="vip.html"> <div class="pbox1 projectBox"><h3>database</h3></h3></div></a>
-                    <a href=""> <div class="pbox1 projectBox"><h3>Coming... Soon</h3></div></a>
-                  <!-- <a href=""> <div class="pbox1 projectBox"></div></a>
-                   <a href=""> <div class="pbox1 projectBox"></div></a> -->
-
-
-                   <!-- add any Project Here.. -->
-                   
-                </div>
-            </div>
-                 <div class="mysocailLinks">
-                    <h3>Follow us on Social Media</h3>
-                    <div class="iconsBox">
-                        <a href="https://instagram.com/princenishad.in?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><div class="instagram incons"><img src="images/instagram.png" alt=""></div></a>
-                        <a href="https://www.facebook.com/prince.nishad.71271466?mibextid=ZbWKwL" target="_blank"><div class="facebook incons"><img src="images/facebook.png" alt=""></div></a>
-                        <a href="https://twitter.com/Digital_prince0?t=iFKOFP11AazTHYwp3OF1Ig&s=09" target="_blank"><div class="twitter incons"><img src="images/twitter.png" alt=""></div></a>
-                        <a href="https://www.linkedin.com/in/prince-nishad-005b0b264" target="_blank"><div class="linkedin incons"><img src="images/linkedin.png" alt=""></div></a>
-                    </div>
-                    <a href="https://telegram.me/coding_zonne" target="_blank" id="telegram"><div class="telegram">Join Telegram For Source Code</div></a>
-
-                 </div>
-
-                 <div class="contectForm">
-                    <div class="form">
-                    <h3>Contact form </h3>
-
-                        <form action="" method="post" id="form">
-                            <div class="fname formBox">
-                                <label for="fullname">Full Name *</label> <br>
-                                <input type="text" id="fullname" name="name" placeholder="Enter your Full name" required>
-                            </div>
-
-                            <div class="Mobile No. formBox">
-                                <label for="phone">Phone No. *</label> <br>
-                                <input type="number" id="phone" name="phone"  placeholder="Enter your Phone No." required>
-                            </div>
-
-                            <div class="email formBox">
-                                <label for="email">Email *</label> <br>
-                                <input type="email" id="email" name="email" placeholder="Enter your E-mail" required>
-                            </div>
-
-                            <div class="comment formBox">
-                                <label for="textArea">Comment </label> <br>
-                                <textarea name="comment" id="textArea" cols="30" rows="10" placeholder="Comment Here..."></textarea>
-                            </div>
-                              
-                            <div class="button formBox">
-                                <input type="submit">
-                            </div>
-                        </form>
-                    </div>
-
-                 </div>
-
-            <footer>
-                <div class="footerBox">
-                <div class="fbox">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">about Us</a></li>
-                        <li><a href="">turm & Conditions</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="fbox">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><a href="">contact us</a></li>
-                        <li><a href="">form</a></li>
-                        <li><a href="">E-mail</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="fbox">
-                    <h3>Reply Us</h3>
-                    <ul>
-                        <li><a href="">feedback</a></li>
-                        <li><a href="">projects</a></li>
-                        <li><a href="">Whatsapp</a></li>
-                        
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <h2>
-                    Copyright Claim 2023-2024
-                </h2>
-            </div>
-            </footer>
-        </div>
     </div>
-    <script src="index.js"></script>
-    
     <script>
-        window.addEventListener('scroll',function(){
-            console.clear()
-          let scrollData =  window.pageYOffset;
+        let sendBtn = document.getElementById('sendBtn');
+let wrapper = document.getElementById('chats');
 
-           let header =  document.getElementsByClassName('header')[0];
-          if(scrollData >= 40){
-            header.style.background = "#fff";
-            header.style.boxShadow = "0px 5px 12px #181f252c";
-          }else{
-            header.style.background = "transparent"
-            header.style.boxShadow = "0px 5px 12px #181f2500";
+sendBtn.onclick = function(e){
+    let userInput = document.getElementById('userText').value.trim();
+    let userText;
+  
+    if(userInput.length >= 1){
+        userText = document.createTextNode(userInput)
+        let userDis = document.createElement("div");
+        userDis.className = "box"
+        userDis.appendChild(userText)
+    
+        // let wrapper = document.getElementById('chats');
+    
+    
+        let right = document.createElement("div");
+        right.className = "rightBox";
+        wrapper.append(right)
+        right.appendChild(userDis)
+
+       
+
+    
+    }
+
+    let tes = document.getElementById('userText').value = '';
+
+
+        var a;
+        var r = false;
+        var s;
+        
+     if(userInput == "hello" || userInput == "Hello" || userInput == "hii" || userInput == "hellow"){
+         a = "What can i help you ?"
+         r = true;
+         s = "Please Talk me in Englsih Language with correct translate"
+        
+     }else if(userInput == "What is your Name" || userInput == "what is your name" || userInput == "What is your Name ?" ||  userInput == "what is your Name ?" || userInput == "What is your name " || userInput == "What is your Name ") {
+        a = "My Name is Alexa Mujhe Prince Ji ne banaya hai"
+        r = true;
+        s ="your name"
+     } else if(userInput == "ok" || userInput == "Ok"){
+        a = "yes"
+        
+     }else if(userInput == "what are you doing ?" || userInput == "What are you doing ?" || userInput == "What are you doing" || userInput == "what are you doing"){
+        a = "I wating.. your Message for reply. 😄😍"
+        
+     }else if(userInput == "How are you ?" || userInput == "how are you ?"  || userInput == "how are you" ){
+        a = "I am fine"
+        r = true;
+        s = "How are you & your famely "
+
+     }
+     else if(userInput == "I am fine" || userInput == "fine"  || userInput == "i am good" ){
+        a = "Nice "
+        r = true;
+        s = "and your family members"
+    
+
+     }
 
 
 
-          }
-})
+if(r){
+   setTimeout(()=>{
+    
+    let airesponse = document.createElement('div')
+    airesponse.className= 'left';
+    wrapper.appendChild(airesponse)
+
+
+    let reply = document.createElement('div');
+    reply.className = 'aireply';
+
+    let aitext = document.createTextNode(s)  ;
+
+    reply.appendChild(aitext)
+
+    airesponse.appendChild(reply)
+   },2500)
+}
+    
+    
+      
+      
+
+    console.log(a)
+
+ setTimeout(function test(){
+    if(a.trim().length >= 1){
+        let airesponse = document.createElement('div')
+        airesponse.className= 'left';
+        wrapper.appendChild(airesponse)
+
+
+        let reply = document.createElement('div');
+        reply.className = 'aireply';
+
+        let aitext = document.createTextNode(a)  ;
+
+        reply.appendChild(aitext)
+
+        airesponse.appendChild(reply)
+
+    }
+ },1500)
+
+
+
+
+   
+
+
+
+
+
+
+   
+
+   
+     
+
+    
+}
+
+
     </script>
 </body>
 </html>
