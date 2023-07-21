@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>UserDashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;;
+        }
+        body{
+            background-color: #FFF;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header i{
+            margin: 10px 25px;
+            font-size: 1.5rem;
+        }
+         h3{
+            margin: 10px 20px;
+            letter-spacing: 1px;
+        }
+       .user{
+        width: 100%;
+        height: auto;
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+       }
+       .userInfo{
+        width: 100%;
+        height: auto;
+        /* border: 1px solid; */
+        text-align: center;
+       }
+       .userInfo span{
+        color: rgb(255, 164, 28);
+       }
+       .userImage{
+        width: 80px;
+        height: 80px;
+        outline: 2px solid blue;
+        border-radius: 50%;
+       }
+       .userImage img{
+        width: 100%;
+        border-radius: 50%;
+        border: 4px solid #fff;
+       }
+       .earn{
+        width: 80%;
+        height: auto;
+        border-radius: 6px;
+        background: #f0f0f0;
+        margin: 15px auto;
+        /* box-shadow: 0px 1px 8px #00000025; */
+        border: 1px grey;
+        overflow: hidden;
+       }
+       .heading{
+        background-color: rgb(143, 78, 228);
+        padding: 5px 15px;
+        color: #fff;
+       }
+       .earn .heading1{
+        background-color: rgb(228, 168, 78);
+        padding: 5px 15px;
+        color: #fff;
+       }
+       .earn .heading2{
+        background-color: rgb(243, 75, 243);
+        padding: 5px 15px;
+        color: #fff;
+       }
+       .money{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(143, 78, 228, 0.055);
+        font-size: 1.2rem;
+        justify-content: center;
+        font-weight: 400;
+       }
+       .money1{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 205, 96, 0.055);
+        font-size: 1.2rem;
+        justify-content: center;
+        font-weight: 400;
+       }
+       .money2{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(246, 79, 252, 0.055);
+        font-size: 1.2rem;
+        justify-content: center;
+        font-weight: 400;
+       }
+
+       
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <i class="fa-solid fa-arrow-left"></i>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <h3>My Profile</h3>
+     <div class="userInfo">
+        <div class="user">
+            <div class="userImage">
+                <img src="images/user2.jpg" alt="">
+            </div>
+        </div>
+        <h3>Rinku Singh</h3>
+        <p>Start Date <span><b>18 July 2023</b></span></p>
+     </div>
+     <div class="box1 earn">
+        <p class="heading">Today Earnings</p>
+        <div class="money">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>375 /-</h3>
+        </div>
+     </div>
+
+     <div class="box1 earn">
+        <p class="heading1">Today Earnings</p>
+        <div class="money1">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>375 /-</h3>
+        </div>
+     </div>
+
+
+     <div class="box1 earn">
+        <p class="heading2">Today Earnings</p>
+        <div class="money2">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>375 /-</h3>
+        </div>
+     </div>
+
+
+   
+
+
+
+
+
+  </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
