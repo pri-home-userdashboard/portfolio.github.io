@@ -1,0 +1,25 @@
+        <button class="btnss">button1</button> <button class="btnss">button1</button>
+        
+        // Isko select kiya gya hai by (querySelectorAll)
+        let btnss = document.querySelectorAll(".btnss");
+
+        for(let i =0; i < btnss.length; i++){ // this is for loop for target all btnss
+
+
+            btnss[i].addEventListener('click',(e)=>{ //this is target all to buttons click
+
+                  let url = e.target.value;
+
+            fetch(url) //fetch methiod
+            .then((response)=>{
+                return response.text(); //get data to text()/json()
+            }).then((res)=>{ //finel response
+                document.getElementsByClassName('cd')[0].innerHTML = res;
+            }).catch((err)=>{ // cath err to any Problem
+                console.log("err")
+            })
+
+            })
+
+
+        }
