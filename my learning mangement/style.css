@@ -14,7 +14,7 @@ body{
 }
 .loader{
     width: 100%;
-    height: 100vh;
+    height: auto;
     position: fixed;
     z-index: 100;
     display: grid;
@@ -146,7 +146,7 @@ body{
 /* this is a fpage  */
 .fpage{
     width: 100%;
-    height: 80vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
