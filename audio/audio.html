@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio</title>
+    <link rel="stylesheet" href="audio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <nav><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-ellipsis-vertical"></i></nav>
+        
+        <div class="mugicInfo">
+            <marquee behavior="smooth" direction="10s" class="mugicName">
+                Udd Jaa Kaale Kaava Gadar 2 Sunny Deol Ameesha Mithoon Udit N Alka....
+            </marquee>
+            <p id="mugicAuth">Gadar 2 Sunny Deol</p>
+        </div>
+
+
+        <div class="mugicImage">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbUAaM22cWG7Hd-E_W64kPRziITlZY0oxEiSTb_CYTZT9pF-Lu6aP2gf_MGjyYtkQ4a2o&usqp=CAU" alt="">
+        </div>
+
+
+     
+       <input type="range" name="range" id="progress">
+
+       <div class="timeline">
+        <div> <p id="endTime" class="mugicTime">00</p></div>
+        <div id="minu"><!-- <span id="min">00</span>?--><p id="startTime" class="mugicTime">00</p></div>
+       
+       </div>
+
+
+
+        <audio controls id="mugic">
+            <source src="Udd Jaa Kaale Kaava Gadar 2 Sunny Deol Ameesha Mithoon Udit N Alka Y Uttam SAnand Bakshi [TubeRipper.com] (1).m4a" type="audio/mp3">
+            <!-- <source src="hindisongs.m4a" type="audio/mp3"> -->
+        </audio>
+
+        <div class="likesStatus">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-shuffle"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+        <div class="mctrl">
+            <button id="prevB"><i class="fa-solid fa-backward"></i></button1>
+            <!-- <button id="prev"><i class="fa-solid fa-rotate-left"></i></button1> -->
+            <button id="play"><i class="fa-solid fa-play"></i></button2>
+            <!-- <button id="next"><i class="fa-solid fa-rotate-right"></i></button3> -->
+            <button id="nextF"><i class="fa-solid fa-forward"></i></button3>
+
+        </div>
+    </div>
+
+    <script>
+        let prev = document.getElementById("prev");
+        let progress = document.getElementById("progress");
+        let play = document.getElementById("play");
+        let playIcons = document.getElementsByClassName("fa-play")[0];
+        let mugicImage = document.getElementsByClassName("mugicImage")[0];
+        let next = document.getElementById("next");
+        let mugic = document.getElementById("mugic");
+         let endTimeInMin = document.getElementById('min');
+
+
+        let ctrl = true;
+
+        play.addEventListener("click",()=>{
+            if(ctrl){
+                mugic.play();
+                ctrl = false;
+                playIcons.classList.replace('fa-play','fa-pause')
+                mugicImage.classList.add("anim")
+               
+                
+            }else{
+                mugic.pause()
+                playIcons.classList.replace('fa-pause','fa-play')
+                mugicImage.classList.remove("anim")
+
+                ctrl = true;
+            }
+
+        })
+
+        
+        mugic.onloadedmetadata = function(){
+            progress.max = mugic.duration;
+            progress.value = mugic.currentTime;
+
+            
+
+
+            if(mugic.duration < 60){
+                document.getElementById("endTime").innerHTML = "0:" + mugic.duration.toFixed(0);
+            }else{
+                let tt =  (mugic.duration/60).toFixed(2);
+
+                let t = tt.replace(".",":")
+                console.log(t)
+                document.getElementById("endTime").innerHTML = t ;
+            }
+
+   
+
+
+            // tTime.inner = ( mugic.currentTime < 10)? `0${mugic.currentTime}` :  mugic.currentTime;
+
+        }
+       
+       
+       
+                if(mugic.play()){
+                 setInterval(()=>{
+                 progress.value = mugic.currentTime;
+                    
+                // console.log(mugic.currentTime);
+                // console.log((mugic.currentTime/60).toFixed(2))
+                document.getElementById("startTime").innerHTML = (mugic.currentTime).toFixed(0)
+
+
+        
+          
+            },1000);
+        }
+
+     
+
+      
+
+    //   console.log(status)
+
+    
+  
+      
+
+        
+
+     
+
+        // next.addEventListener("click",()=>{
+        //     mugic.currentTime =  mugic.currentTime + 3;
+        // })
+        // prev.addEventListener("click",()=>{
+        //     mugic.currentTime =  mugic.currentTime - 3;
+        // })
+
+        progress.addEventListener("change",()=>{
+            mugic.play();
+            mugic.currentTime = progress.value;
+            playIcons.classList.replace('fa-play','fa-pause')
+            mugicImage.classList.add("anim")
+                ctrl = false;
+
+
+
+    
+        })
+
+
+    </script>
+</body>
+</html>

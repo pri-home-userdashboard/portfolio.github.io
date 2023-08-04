@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poppins:wght@200;300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Nanum Gothic Coding', monospace; */
+     font-family: 'Poppins', sans-serif;
+    
+}
+
+.container{
+    width: 350px;
+    height: 100vh;
+    border: 1px solid;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(rgb(131, 94, 46),rgb(17, 17, 17));
+    padding: 5px 2px;
+}
+nav{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    color: #fff;
+}
+nav i{
+    font-size: 1.4rem;
+
+}
+.mugicImage{
+    width: 220px;
+    height: 220px;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 20px #00000038;
+    margin: 15px auto;
+    border-radius: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+audio{
+    display: none;
+}
+.anim{
+    animation: rotate 5s linear infinite;
+    transform-origin: center;
+}
+/* @keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+} */
+#progress{
+    -webkit-appearance: none;
+    width: 80%;
+    height: 4px;
+    background-color: rgb(228, 228, 228);
+
+    /* background-image: conic-gradient( at 1%, rgba(255, 255, 0, 0)   , 50% ,green 0deg); */
+    border-radius: 4px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 219, 16);
+    border-radius: 50px;
+}
+.timeline{
+  
+    /* border: 1px solid; */
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.mugicTime{
+    margin: 0px auto;
+    display: block;
+    margin: 8px 0px;
+}
+.mugicImage img{
+    width: 100%;
+}
+
+.mugicInfo,.mctrl{
+    width: 90%;
+    height: auto;
+    /* border: 1px solid; */
+    margin: 14px auto;
+}
+.mctrl{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 3px;
+    margin-top: 25px;
+    padding: 15px;
+    color: #fff;
+ 
+}
+.mugicInfo{
+    min-height: 50px;
+    color: #fff;
+}
+.mugicName{
+    font-size: 1.5rem;
+}
+.likesStatus{
+    width: 80%;
+    min-height: 20px;
+    /* border: 1px solid; */
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    padding: 5px 0px;
+    color: #fff;
+   
+}
+.likesStatus i{
+    cursor: pointer;
+}
+button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 3px 18px #551df038;
+    color: #252525;
+    font-size: 1.4rem;
+    display: grid;
+    place-items: center;
+    color: rgb(43, 30, 56)
+
+
+}
+#min{
+    display: inline-block;
+    margin: 8px 0px;
+
+}
+#minu{
+  display: flex;
+
+}
+button:first-child,button:last-child{
+    transform: scale(.9);
+}
+
+button:nth-child(2n){
+    transform: scale(1.2);
+}
+
+
+
+@media screen and (max-width: 420px) {
+    .container{
+        width: 100%;
+    }
+}
