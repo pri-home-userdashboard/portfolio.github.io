@@ -157,13 +157,9 @@ audio.onloadedmetadata = function(){
 
     endTime.textContent = (audio.duration/60).toFixed(2);
 
-
-    let totalDur = audio.duration;
-
-   
-
     setInterval(()=>{
-        if(audio.currentTime === totalDur){
+          let totalDur = audio.duration-1;
+        if(audio.currentTime > totalDur){
             nextSong();
 
         }
