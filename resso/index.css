@@ -25,10 +25,10 @@ background: linear-gradient(to top left, rgb(71, 0, 34) ,rgb(83, 26, 0));
 .mugicBox{
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid #c5c3c3;
+    border-bottom: 1px solid #757575;
     display: flex;
     align-items: center;
-    margin: 5px 0px;
+    margin: 12px 0px;
     
 }
 .mugicImg{
