@@ -5,6 +5,7 @@ export let songs = [
         songImage:"Black Dadhi  ब्लैक दाढ़ी",
         songSrc:"Black Dadhi  ब्लैक दाढ़ी",
     },
+    
     {
         songName:"सेंट गमकउआ Shivani Singh Sent Gamkauwa",
         singerName:"#Shivani Singh",
@@ -43,6 +44,26 @@ export let songs = [
         singerName:"NeelKamal Singh",
         songImage:"Video  हिरोइन",
         songSrc:"Video  हिरोइन",
+    },
+    {
+        songName:"Video -Pawan Singh  राजाजी के दिलवाShivani Singh |",
+        singerName:"Pawan Singh",
+        songImage:"राजाजी के दिलवा _Shivani Singh",
+        songSrc:"राजाजी के दिलवा _Shivani Singh",
+    },
+
+    {
+        songName:" लाल घाघरा | Lal Ghaghra | Shilpi Raj | Namrita Ma",
+        singerName:"Shilpi Raj",
+        songImage:"लाल घाघरा",
+        songSrc:"लाल घाघरा",
+    },
+
+    {
+        songName:"लागेलु जहर | #Shilpi Raj | Lagelu Jahar |",
+        singerName:"Khesari lal & Shilpi Raj",
+        songImage:"लागेलु जहर",
+        songSrc:"लागेलु जहर",
     },
 
 
