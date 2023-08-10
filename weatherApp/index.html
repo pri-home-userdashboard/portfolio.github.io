@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+      <div class="glash">
+        <div class="box1"></div>
+    
+
+        <div class="weather">
+            <div class="search">
+                <input type="text" id="search" name="search" placeholder="search city...">
+                <img src="images/search.png" alt="" class="searchImg" id="searchButton">
+            </div>
+
+            <div class="weather_data">
+                <div class="weatherImage">
+                    <img src="images/cloudy (1).png" alt="">
+                </div>
+                <h2 id="celsiuse"></h2>
+                <h3 id="cityName"></h3>
+                
+                <div class="huWind">
+                    <div class="humidity hw">
+                        <img src="images/humidity.png" alt="">
+                        <p id="humidity"> <br></p> 
+                      
+
+                    </div>
+                    <div class="refresh hw">
+                        <img src="images/refresh.png" alt="">
+                    </div>
+                    <div class="wind hw">
+                        <img src="images/wind.png" alt="">
+                        <p id="wind"><br> </p> 
+                      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="box1"></div>
+      </div>
+    </div>
+    <script>
+       
+
+
+        const searchFun = (city)=>{
+            let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`;
+
+            let key = "b88aaa0e9530817ef7b9ff95c3418c8c";
+
+            fetch(api + key).then((res)=> res.json())
+            .then((result)=>{
+                console.log(result)
+                let cel = result.main.temp - 273.15;
+
+                document.getElementById("celsiuse").innerHTML = Math.round(cel) + " °C";
+                document.getElementById("cityName").innerHTML = result.name;
+                document.getElementById("humidity").innerHTML = result.main.humidity + "%" +"<br>" + "humidity";
+                document.getElementById("wind").innerHTML = result.wind.speed+ "km/h" +"<br>" + "Wind";
+            }).catch((err)=>{
+                document.getElementById("cityName").innerHTML = "Chakia";
+
+            })
+
+
+        };
+
+        searchFun("Gorakhpur");
+        let searchButton = document.getElementById("searchButton");
+
+        searchButton.addEventListener("click",()=>{
+        let userValue =  document.getElementById("search").value;
+        searchFun(userValue ?? "Padrauna");
+           
+        })
+       
+
+    </script>
+</body>
+</html>
